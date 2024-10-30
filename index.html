@@ -4,16 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!--ETIQUETA PARA ENLAZAR NUESTRO ARCHIVO CSS-->
-    <link rel="stylesheet" href="./styles.css">
+    <!-- ETIQUETA PARA ENLAZAR NUESTRO ARCHIVO CSS -->
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- MENU DE NAVEGACION -->
     <header>
       <!-- LOGO DE LA EMPRESA -->
-      <img 
-        width="60"
-        src="https://media.istockphoto.com/id/1427612423/es/vector/extintor-de-incendios-signo-cuadrado-ilustraci%C3%B3n-vectorial.jpg?s=612x612&w=0&k=20&c=r2jfzB-v0oolzriyDdl_ZSlCUTLm30vlzCO_B6L9A2Y=" alt="" />
+      <img
+        width="50"
+        src="https://w7.pngwing.com/pngs/736/930/png-transparent-red-and-white-fire-extinguisher-sign-fire-extinguisher-icon-extinguisher-firefighter-technic-computer-icons-thumbnail.png"
+        alt=""
+      />
       <!-- ETIQUETA PARA CREAR UN MENU DE NAVEGACION -->
       <nav>
         <!-- LISTA NO ORDENADA -->
@@ -21,6 +23,9 @@
           <!-- CADA ELEMENTO DE MI LISTA EN UN LI -->
           <li>
             <!-- CREO UN ENLACE A OTRAS SITIOS -->
+            <a href="">Inicio</a>
+          </li>
+          <li>
             <a href="">Nosotros</a>
           </li>
           <li>
@@ -35,6 +40,43 @@
         </ul>
       </nav>
     </header>
-    
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+      <!-- ETIQUETA PARA CREAR UN CONTENEDOR -->
+      <div class="hero">
+        <div>
+          <h1>EXTINPERU</h1>
+          <p>
+            Tu seguridad primero
+          </p>
+          <a class="btn-inicio" href="">Compremos!!</a>
+        </div>
+      </div>
+    </main>
+    <!-- ANTES DE ACABAR EL BODY -->
+    <script>
+      // vamos a solicitar un color al usuario
+      const colorDeFondo = prompt(
+        "Hola usuario, por favor escribe un color en ingles"
+      );
+
+      console.log(colorDeFondo);
+      // para poder modificar el color del fondo
+      document.body.style.backgroundColor = colorDeFondo;
+
+      // document.querySelectorAll("a").forEach((element) => {
+      //   element.style.color = "white";
+      // });
+      // PESO ES LA LUNA
+      // (PESO / 9.81) * 1,622
+      const peso = prompt("Ingresa tu peso en la tierra"); // 50
+      // COMO prompt nos retorna un string debemos convertir peso a number
+      // parseInt(peso) => convertir a numeros enteros
+      // parseFloat(peso) => convertir a numeros decimales
+      // Number(peso) => convierte a cualquier tipo de numero
+      const resultado = (Number(peso) / 9.81) * 1.622;
+      // alert
+      alert("Tu peso en la luna es " + resultado + " Kg.");
+    </script>
   </body>
 </html>

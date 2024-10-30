@@ -1,0 +1,67 @@
+/*reset: Remover los estilos que vienen por defecto con el navegador*/
+/* "*" = todo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /*CAMBIAR LA FUENTE DE LA WEB*/
+    font-family: Helvetica, sans-serif;
+}
+
+header{
+    /*border: solid 3px;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+img{
+    border-radius: 10%;
+}
+
+a{
+    text-decoration: none;
+    color: brown;
+}
+.hero{
+    border: solid;
+    background: url("https://protectamx.com/wp-content/uploads/2024/03/pasos-para-apagar-un-incendio-con-extintor-3-800x450.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+}
+h1{
+   font-size: 40px;
+   text-shadow: 1px 1px 2px #000;
+}
+
+p{
+    font-size: 18px;
+    text-shadow: 1px 1px 2px #000;
+ }
+
+.btn-inicio{
+    margin-top: 20px;
+    display: block;
+    background-color: rgb(251, 214, 5);
+    width: 140px;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+}
