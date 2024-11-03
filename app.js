@@ -1,23 +1,95 @@
-function changeBackgrounColor(){
-    const backgrounColor = prompt("ingrese un color de fondo para la web");
-document.body.style.backgroundColor = backgrounColor;
+function changeBackgroundColor() {
+    const backgroundColor = prompt("Ingrese un color de fondo para la web");
+    document.body.style.backgroundColor = backgroundColor;
+  }
+  
+  // changeBackgroundColor();
+  
+  function registerBrothers() {
+    // Paso 1: Debemos saber la cantidad de hermanos
+    const brotherQuantity = Number(prompt("Ingrese la cantidad de hermanos"));
+    // Paso 2: Creamos un arreglo vacio donde vamos a agregar los nombres de los hermanos
+    const brothers = [];
+  
+    // Paso 3: Crear una variable counter para ir contando la cantidad de veces que ejecutamos el while
+    let counter = 0;
+  
+    // Paso 4: Creamos un while usando la condición de counter < brotherQuantity
+    while (counter < brotherQuantity) {
+      // Paso 5: Preguntamos al usuario el nombre del hermano
+      const brotherName = prompt("Ingresa el nombre de tu hermano " + counter);
+      // Paso 6: Agregamos el nombre del hermano al arreglo de nombres
+      brothers.push(brotherName);
+      // Paso 7: Aumentamos en 1 a counter
+      counter++;
+    }
+  
+    // Paso 8: Mostramos en consola el valor del arreglo de hermanos
+    console.log(brothers);
+  }
+  
+  function generarColorHex() {
+    const letras = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+      color += letras[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+  
+  function generateBlocks() {
+    const blocksNumber = Number(
+      prompt("Ingrese la cantidad de bloques que desea dibujar")
+    );
+  
+    let counter = 0;
+  
+    while (counter < blocksNumber) {
+      // Para poder crear un elemento HTML desde JS podemos la funcion createElement
+      const newDiv = document.createElement("div"); // <div></div>
+      newDiv.style.width = "100px";
+      newDiv.style.height = "100px";
+      newDiv.style.backgroundColor = generarColorHex();
+      // para que este newDiv aparezca debo agregarlo en el body
+      // document.body.appendChild(newDiv);
+      // buscando a la etiqueta main
+      document.querySelector("main").appendChild(newDiv);
+      counter++;
+    }
+  }
+
+
+function generarNumeroAleatorio(max) {
+    return Math.floor(Math.random() * max);
 }
 
-//changeBackgrounColor();
+function eleccionComputadora() {
+    const opciones = ["piedra", "papel", "tijera"];
+    const indice = generarNumeroAleatorio(opciones.length);
+    return opciones[indice];
+}
 
-function registerBrothers(){
+function jugarPiedraPapelTijera() {
+    const eleccionUsuario = prompt("Elige una opción: piedra, papel o tijera").toLowerCase();
+    const eleccionCompu = eleccionComputadora();
 
-    const brotherQuantity =Number(prompt("Ingrese la cantidad de heramnos"));
-    const brothers = [];
-
-    const counter=0
-    while(counter < brotherQuantity){
-        
-        const brotherName = prompt("Ingrese el nombre de tu hermano" + (counter+1));
-        brothers.push(brotherName);
-        counter++
+    if (!["piedra", "papel", "tijera"].includes(eleccionUsuario)) {
+        alert("Opción no válida. Elige piedra, papel o tijera.");
+        return;
     }
 
-    console.log(brothers);
+    alert(`Elección del usuario: ${eleccionUsuario}\nElección de la computadora: ${eleccionCompu}`);
 
+    if (eleccionUsuario === eleccionCompu) {
+        alert("Es un empate.");
+    } else if (
+        (eleccionUsuario === "piedra" && eleccionCompu === "tijera") ||
+        (eleccionUsuario === "tijera" && eleccionCompu === "papel") ||
+        (eleccionUsuario === "papel" && eleccionCompu === "piedra")
+    ) {
+        alert("¡Ganaste!");
+    } else {
+        alert("Perdiste.");
+    }
 }
+
